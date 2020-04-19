@@ -4,22 +4,12 @@ import '../App.css';
 
 
 
- function MovieList({movies=[], onAddMovie=()=>{} }) {
+ function MovieList({movies=[] }) {
     return (
         <div className='movie-list'>
             {
                 movies.map(el =><MovieCard key={el.id} movie={el}/> )
             }
-          <div className='add-movie-card'
-          onClick={() => {
-            onAddMovie({
-                id: Math.random(),
-                title: prompt('movie title: '),
-                rating: Number(prompt('movie rating: ')),
-                year: Number(prompt('movie year: '))
-            })
-        }}
-          >+</div>
         </div>
     )
 }

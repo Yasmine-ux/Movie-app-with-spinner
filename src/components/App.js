@@ -5,6 +5,8 @@ import Rating from './Rating';
 import MovieList from './MovieList';
 import UpdateComponent from './withLoading';
 import Spinner from './spinner';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Addmovie from './modal';
 
 
 const Inception = 
@@ -78,6 +80,7 @@ class  App extends Component{
         <MovieList movies={this.MovieFilterRating()}
         onAddMovie={(newMovie) => this.addNewMovie(newMovie)}
         />
+        <Addmovie rating={this.state.props} onSubmit={this.addNewMovie}/>
       </main>
     </div>
     )}
